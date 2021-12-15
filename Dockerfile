@@ -8,7 +8,7 @@ RUN pip3 install -r /tmp/requirements.txt
 
 RUN sudachipy link -t full
 
-ENV APP_PATH=/home/naoki/pytorch_study/text_gen_seq2seq
+ENV APP_PATH=/home
 WORKDIR ${APP_PATH}
 ENV HOME=${APP_PATH}
 ENV USERNAME=user
