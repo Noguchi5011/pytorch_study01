@@ -1,0 +1,27 @@
+<flow TextGenFlow step start> failed:
+    Internal error
+Traceback (most recent call last):
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/metaflow/cli.py", line 857, in main
+    start(auto_envvar_prefix='METAFLOW', obj=state)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 829, in __call__
+    return self.main(args, kwargs)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 1259, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, ctx.params)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 610, in invoke
+    return callback(args, kwargs)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context().obj, args, kwargs)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/metaflow/cli.py", line 425, in step
+    task.run_step(step_name,
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/metaflow/task.py", line 393, in run_step
+    self._exec_step_function(step_func)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/metaflow/task.py", line 47, in _exec_step_function
+    step_function()
+  File "script/main.py", line 19, in start
+    Input = open('script/Readingfile/Input.txt', "x")
+FileNotFoundError: [Errno 2] No such file or directory: 'script/Readingfile/Input.txt'
+

@@ -1,0 +1,63 @@
+<flow TextGenFlow step start> failed:
+    Internal error
+Traceback (most recent call last):
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/sudachipy/config.py", line 56, in create_default_link_for_sudachidict_core
+    dict_path = Path(import_module('sudachidict').__file__).parent
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'sudachidict'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/sudachipy/config.py", line 59, in create_default_link_for_sudachidict_core
+    import_module('sudachidict_core')
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'sudachidict_core'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/metaflow/cli.py", line 857, in main
+    start(auto_envvar_prefix='METAFLOW', obj=state)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 829, in __call__
+    return self.main(args, kwargs)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 1259, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, ctx.params)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/core.py", line 610, in invoke
+    return callback(args, kwargs)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context().obj, args, kwargs)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/metaflow/cli.py", line 425, in step
+    task.run_step(step_name,
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/metaflow/task.py", line 393, in run_step
+    self._exec_step_function(step_func)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/metaflow/task.py", line 47, in _exec_step_function
+    step_function()
+  File "script/main.py", line 18, in start
+    self.src, self.target, self.pairs = prepareData(INPUT, OUTPUT, text_df)
+  File "/home/naoki/pytorch_study/pytorch_study01/script/readfile.py", line 69, in prepareData
+    input_lang.addSentence(pair[0])
+  File "/home/naoki/pytorch_study/pytorch_study01/script/lang.py", line 27, in addSentence
+    for word in sudachi.get_token(sentence):
+  File "/home/naoki/pytorch_study/pytorch_study01/script/tokenizer.py", line 25, in get_token
+    tokenizer_obj = dictionary.Dictionary().create()
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/sudachipy/dictionary.py", line 37, in __init__
+    self._read_system_dictionary(config.settings.system_dict_path())
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/sudachipy/config.py", line 107, in system_dict_path
+    dict_path = create_default_link_for_sudachidict_core(output=f)
+  File "/home/naoki/pytorch_study/pytorch/lib/python3.8/site-packages/sudachipy/config.py", line 61, in create_default_link_for_sudachidict_core
+    raise KeyError('You need to specify `systemDict` in the config when `sudachidict_core` is not installed.')
+KeyError: 'You need to specify `systemDict` in the config when `sudachidict_core` is not installed.'
+
