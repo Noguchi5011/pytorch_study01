@@ -15,7 +15,7 @@ class TextGenFlow(FlowSpec):
     def start(self):  
         print("Reading File...")
         text_df = readfile("data/entail_evaluation_set.txt")
-        self.src, self.target, self.pairs = prepareData(INPUT, OUTPUT, text_df)
+        self.src, self.target, self.pairs = prepareData(INPUT, OUTPUT, text_df) 
         self.next(self.init_network)
 
     @step
